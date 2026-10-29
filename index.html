@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Run, learn, and explore in Dino Quest, a classroom-friendly endless runner.">
+  <title>Dino Quest — Run. Learn. Explore.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Dino Quest home"><span class="brand-mark">✦</span><span>DINO<span class="brand-accent">QUEST</span><small>RUN · LEARN · EXPLORE</small></span></a>
+      <div class="top-actions"><span class="saved-label"><i></i> Progress saved</span><button class="icon-btn" id="soundToggle" aria-label="Toggle sound" title="Toggle sound">♫</button></div>
+    </header>
+
+    <section class="hud" aria-label="Game stats">
+      <div class="stat"><span class="stat-icon score-icon">✦</span><span><small>SCORE</small><strong id="score">00000</strong></span></div>
+      <div class="stat"><span class="stat-icon best-icon">♛</span><span><small>BEST</small><strong id="highScore">00000</strong></span></div>
+      <div class="stat"><span class="stat-icon life-icon">♥</span><span><small>LIVES</small><strong id="lives">♥ ♥ ♥</strong></span></div>
+      <div class="stat"><span class="stat-icon level-icon">⬡</span><span><small>STAGE</small><strong id="level">01 <em>·</em> MEADOW</strong></span></div>
+    </section>
+
+    <section class="game-card" aria-label="Dino Quest game">
+      <div class="stage-meta"><span><span class="live-dot"></span><span id="stageStatus">READY TO EXPLORE</span></span><div class="progress-wrap"><span id="progressLabel">STAGE 1 PROGRESS</span><div class="progress-track"><div id="progressFill"></div></div></div></div>
+      <div class="canvas-wrap"><canvas id="game" width="960" height="430" aria-label="Dinosaur runner. Jump over obstacles and collect stars." role="img"></canvas>
+        <div class="overlay" id="startScreen"><div class="eyebrow"><span>✦</span> YOUR NEXT ADVENTURE</div><h1>Run wild.<br><span>Think big.</span></h1><p>Leap over obstacles, collect stardust, and<br class="desktop-only"> power up your brain with quick-fire quizzes.</p><button class="primary-btn" id="startBtn">Start your quest <span>→</span></button><div class="key-hint"><kbd>SPACE</kbd> or <kbd>↑</kbd> to jump <span>·</span> <kbd>P</kbd> to pause</div><div class="hero-dino">🦖</div></div>
+        <div class="overlay hidden" id="pauseScreen"><div class="overlay-icon">Ⅱ</div><h2>Take a breather</h2><p>Your adventure is right where you left it.</p><button class="primary-btn" id="resumeBtn">Keep exploring <span>→</span></button><button class="text-btn" id="restartPauseBtn">Restart quest</button></div>
+        <div class="overlay hidden" id="quizScreen"><div class="quiz-chip"><span>✦</span> BRAIN BREAK <b id="quizSubject">SCIENCE</b></div><h2 id="questionText">Question goes here?</h2><div class="answers" id="answers"></div><div class="quiz-footer"><span>Choose wisely, explorer</span><span id="quizReward">CORRECT ANSWER · +150 XP</span></div></div>
+        <div class="overlay hidden" id="gameOverScreen"><div class="eyebrow">QUEST COMPLETE</div><h2 id="gameOverTitle">A great adventure!</h2><p id="finalScore">You scored 0 points</p><div class="leaderboard"><div><span>YOUR BEST</span><strong id="resultBest">00000</strong></div><div><span>QUESTS PLAYED</span><strong id="runsPlayed">01</strong></div><div><span>TOP STAGE</span><strong id="topStage">01</strong></div></div><button class="primary-btn" id="restartBtn">Run it back <span>↻</span></button></div>
+        <div class="toast hidden" id="toast" role="status"></div>
+      </div>
+      <div class="game-footer"><span><i class="sparkle">✦</i> <b id="tip">Little steps make big discoveries.</b></span><button class="pause-btn" id="pauseBtn" aria-label="Pause game">Ⅱ <span>PAUSE</span></button></div>
+    </section>
+
+    <section class="bottom-grid" aria-label="How to play and power-ups">
+      <article class="info-card controls-card"><div class="card-heading"><span class="card-icon">⌁</span><div><h3>Ready, set, leap</h3><p>Simple moves. Big adventure.</p></div></div><div class="control-list"><div><kbd>SPACE</kbd><kbd>↑</kbd><span>Jump</span></div><div><kbd>↓</kbd><span>Dodge low flyers</span></div><div><kbd>P</kbd><span>Pause anytime</span></div></div></article>
+      <article class="info-card power-card"><div class="card-heading"><span class="card-icon star">✦</span><div><h3>Power up!</h3><p>Look out for magical boosts.</p></div></div><div class="power-list"><div><span class="power-gem gem-shield">⬡</span><span><b>Star shield</b><small>One free crash save</small></span></div><div><span class="power-gem gem-magnet">✧</span><span><b>Star magnet</b><small>Pulls stardust your way</small></span></div><div><span class="power-gem gem-slow">◷</span><span><b>Time warp</b><small>Slow things down</small></span></div></div></article>
+      <article class="info-card journey-card"><div class="card-heading"><span class="card-icon journey">⌖</span><div><h3>Your journey</h3><p>Every run makes you sharper.</p></div></div><div class="subject-list"><span>∑ &nbsp;Maths</span><span>⚗ &nbsp;Science</span><span>◷ &nbsp;History</span><span>⌖ &nbsp;Geography</span></div><div class="age-note">Curious minds · up to Class 8</div></article>
+    </section>
+    <footer class="site-footer"><span>Made for curious minds <b>✦</b></span><span>One more run? We knew it. <b>☺</b></span></footer>
+  </main>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
