@@ -6,6 +6,8 @@ A responsive, classroom-friendly endless runner built with HTML5 Canvas, CSS, an
 
 Open `index.html` in a browser, or import this folder into Replit and choose **Static** as the project type. No build step or package installation is needed. The Google Fonts link is optional; the page falls back to system fonts when offline.
 
+The repository also includes a small Caddy-based Docker deployment for Railway. Railway can build the included `Dockerfile` and serve the static game on its assigned port.
+
 ## Project files
 
 - `index.html` — game layout, HUD, menus, and controls
